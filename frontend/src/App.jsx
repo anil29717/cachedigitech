@@ -4,9 +4,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/HomeComponent/Navbar";
 import LoginButton from "./components/HomeComponent/SearchBar";
-import SearchBar from "./components/HomeComponent/Search";
+import SearchBar from "./components/HomeComponent/SearchBar";
 import Footer from "./components/HomeComponent/Footer";
 import HomePage from "./Render_Pages/HomePage";
+import NotFound from "./Pages/NotFoundPage";
 import ServiceDetail from "./Render_Pages/service-detail";
 import Contact from "./components/ServicesComponent/contact";
 import InsightPage from "./Pages/InsightPage";
@@ -27,38 +28,37 @@ import AIDataServicesPage from "./Pages/aianddataservicepage";
 // import InfrastructureServicesPage from "./Pages/NetworkingServicepage";
 import NetworkingConsultingPage from "./Pages/consultingservicePage";
 import ManagedServicesPage from "./Pages/ManagedServices";
+import GRCDashboard from "./components/ServicesComponent/GRCDashbaord";
 
 function App() {
   const location = useLocation();
 
   // paths where Navbar & Login should be hidden
-  
+
   return (
     <>
-      
-          <Navbar />
-          <LoginButton />
-          {/* <SearchBar /> */}
-     
+      <Navbar />
+      <LoginButton className="fixed top-10 right-10 hidden md:flex justify-end z-1000" />
+      {/* <SearchBar /> */}
 
       {/* Page routes */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/service/infra" element={<InfrastructureServicesPage />} />
+        {/* <Route path="/service/infra" element={<InfrastructureServicesPage />} />
         <Route path="/service/network" element={<NetworkingServicesPage />} />
         <Route path="/service/cloud-solutions" element={<CloudServicesPage />} />
         <Route path="/service/cybersecurity" element={<CybersecurityServicesPage />} />
         <Route path="/service/AI" element={<AIDataServicesPage />} />
         <Route path="/consultingservice" element={<NetworkingConsultingPage />} /> */}
 
-
         <Route path="/cloudservices" element={<CloudServicesPage />} />
-        <Route path="/cybersecurity" element={<CybersecurityServicesPage />} /> 
+        <Route path="/cybersecurity" element={<CybersecurityServicesPage />} />
         <Route path="/infrastructureservice" element={<InfrastructureServicesPage />} />
         <Route path="/aianddataservice" element={<AIDataServicesPage />} />
         <Route path="/manageservices" element={<ManagedServicesPage />} />
         <Route path="/consultingservice" element={<NetworkingConsultingPage />} />
-
+        {/* <Route path="/service/:id" element={<ServiceDetail />} /> */}
+        <Route path="/grc-dashboard" element={<GRCDashboard />} />
 
         <Route path="/contact" element={<Contact />} />
         <Route path="/insights" element={<InsightPage />} />
@@ -68,7 +68,7 @@ function App() {
         <Route path="/about" element={<AboutCache />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-use" element={<TermsOfUsePage />} />
-        <Route path="*" element={<h1>404 - Not Found</h1>} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/careers" element={<Careers />} />
       </Routes>
 

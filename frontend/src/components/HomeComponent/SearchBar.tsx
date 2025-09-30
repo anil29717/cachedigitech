@@ -21,7 +21,10 @@ const LoginButton: React.FC = () => {
     "Cloud Solution": "/cloudservices",
     "Artificial Intelligence": "/aianddataservice",
     "Consulting": "/consultingservice",
+    "Managed Services": "/manageservices",
+    "GRC": "/grc-dashboard",
 
+    
     "Industry": "/community",
     "Partners": "/community",
     "Clients": "/community",
